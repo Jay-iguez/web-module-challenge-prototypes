@@ -108,10 +108,14 @@ console.log(`Task 3`, bebeh)
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Global/Window binding is the concept of context where the 'this' keyword would grab items within the global scope of the window opposed to to a particular function.
+  you would want to avoid binding anything to the window.
+  2. Implicit binding is where the 'this' keyword would reference and grab context when on the left side of an object for the object's key name. You use it in those
+  specifc instances of Consructor functions essentially in place of the actual referenced objects name.
+  3. Explicit binding refers to where one would override an object's/functions parameters by using a .call or .apply method. You are essentially explicitely telling the function
+  what to use, or defining it's context.
+  4. New binding refers to where a Constructor function recieves new arguements and creates essentially a copy of it's own object's locations and fills them with the given object/keys data.
+  You use this as a literal template to create multiple objects with the same methods and thus key/value pairs.
 */
 
 ///////// END OF CHALLENGE /////////
