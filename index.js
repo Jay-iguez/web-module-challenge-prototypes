@@ -58,10 +58,29 @@ const aPerson = new Person (`Javi`, '25')
 function Car(model, milesPerGallon) {
   this.model = model
   this.milesPerGallon = milesPerGallon
-  
+  this.tank = 0
+  this.odometer = 0
+}
+
+Car.prototype.fill = function (gallons) {
+  return this.tank = this.tank + gallons
+}
+
+Car.prototype.drive = function(distance) {
+    if (!this.tank == 0) {
+    this.odometer = this.odometer + distance
+    return this.tank = this.tank - (this.milesPerGallon / distance)
+  }
 }
 
 
+const Honda = new Car (`Honda`, `25`)
+
+console.log(Honda)
+console.log(Honda.fill(13))
+console.log(Honda.tank)
+console.log(Honda.drive(30))
+console.log(Honda)
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
