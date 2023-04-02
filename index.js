@@ -39,6 +39,8 @@ Person.prototype.toString = function () {
 
 const aPerson = new Person (`Javi`, '25')
 
+console.log(`Task 1`, aPerson)
+
 /*
   TASK 2
     - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -76,7 +78,7 @@ Car.prototype.drive = function(distance) {
 
 const Honda = new Car (`Honda`, `25`)
 
-console.log(Honda)
+console.log(`Task 2`, Honda)
 console.log(Honda.fill(13))
 console.log(Honda.tank)
 console.log(Honda.drive(30))
@@ -89,11 +91,20 @@ console.log(Honda)
         + Should return a string "Playing with x", x being the favorite toy.
 */
 
-function Baby() {
-
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age)
+  this.favoriteToy = favoriteToy
 }
 
+Baby.prototype = Object.create(Person.prototype)
 
+Baby.prototype.play = function () {
+  return `Playing with ${this.favoriteToy}`
+}
+
+const bebeh = new Baby (`BB`, `1`, `Fortnite`)
+
+console.log(`Task 3`, bebeh)
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
