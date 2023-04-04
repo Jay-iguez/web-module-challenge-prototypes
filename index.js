@@ -22,7 +22,7 @@ function Person(name, age) {
 }
 
 Person.prototype.eat = function (string) {
-  if(!this.stomach.length > 10 && this.stomach.length <= 10) {
+  if(this.stomach.length < 10) {
     this.stomach.push(string)
   } else if (this.stomach.length) {
     return console.log(`I'm full`)
